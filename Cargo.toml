@@ -1,8 +1,24 @@
 [package]
 name = "zero2prod"
 version = "0.1.0"
+authors = ["Rogers Aaron <rogers@luso.solutions>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+# We could use  any path here, but we are following the community convention
+# cargo will default to `package.name`, which is what we want.
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "zero2prod"
+
+
 [dependencies]
+actix-web = "4.0.0-beta.5"
+
+[dev-dependencies]
+actix-rt = "2"
+reqwest = "0.11"
